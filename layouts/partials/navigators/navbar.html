@@ -15,7 +15,7 @@
 <nav class="navbar navbar-expand-xl top-navbar initial-navbar" id="top-navbar">
   <div class="container">
     <a class="navbar-brand" href="{{ .Site.BaseURL | relLangURL }}">
-      <img src="{{ $invertedLogo | absURL }}" id="logo">
+      <img src="{{ $invertedLogo | absURL }}" id="logo" alt="">
       {{- .Site.Title -}}
     </a>
     <button
@@ -24,6 +24,7 @@
       type="button"
       data-toggle="collapse"
       data-target="#top-nav-items"
+      aria-label="Open the nav"
     >
       <span class="navbar-toggler-icon"></span>
     </button>

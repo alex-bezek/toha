@@ -1,5 +1,5 @@
 <div class="col-lg-4 col-md-6 pt-2 post-card">
-  <a href="{{ .RelPermalink }}" class="post-card-link">
+  <a href="{{ .RelPermalink }}" class="post-card-link" aria-label="{{ .LinkTitle }}" >
     <div class="card">
       <div class="card-head">
         <img class="card-img-top" src='{{ partial "helpers/get-hero.html" . }}'
@@ -7,7 +7,7 @@
         />
       </div>
       <div class="card-body">
-        <h5 class="card-title">{{ .Title }}</h5>
+        <h2 class="h5 card-title">{{ .Title }}</h2>
         <p class="card-text post-summary"> {{ .Summary }}</p>
       </div>
       <div class="card-footer">

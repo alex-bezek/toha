@@ -20,7 +20,7 @@
   <div class="container pt-5">
     <div class="row text-left">
       <div class="col-md-4 col-sm-12">
-        <h5>{{ i18n "navigation" }}</h5>
+        <h3 class="h5">{{ i18n "navigation" }}</h3>
         {{ if $sections }}
         <ul>
           {{- range sort $sections "section.weight" }}
@@ -30,7 +30,8 @@
                 {{ $sectionID = .section.id }}
               {{ end }}
               <li class="nav-item">
-                <a class="smooth-scroll" href="#{{ $sectionID }}">{{ .section.name }}</a>
+                {{/*  https://github.com/twbs/bootstrap/commit/8e26010d0679a9fa07f34a4b4d003738f76dd79c  */}}
+                <a class="smooth-scroll px-2 mx-1 py-3 my-n2" href="#{{ $sectionID }}">{{ .section.name }}</a>
               </li>
             {{ end }}
           {{- end }}
@@ -40,7 +41,7 @@
       </div>
       {{ if $author }}
       <div class="col-md-4 col-sm-12">
-        <h5>{{ i18n "contact_me" }}</h5>
+        <h2 class="h5">{{ i18n "contact_me" }}</h2>
         <ul>
           {{ range $key,$value:= $author.contactInfo }}
           <li><span>{{ title $key }}: </span> <span>{{ $value }}</span></li>
@@ -51,7 +52,7 @@
       {{ if .Site.Params.newsletter.enable }}
       <div class="col-md-4 col-sm-12">
         <!-- <h5>Newsletter</h5> -->
-        <p>{{ i18n "newsletter_text" }}</p>
+        <p id="inputEmail-label">{{ i18n "newsletter_text" }}</p>
         <form>
           <div class="form-group">
             <input
@@ -59,6 +60,7 @@
               class="form-control"
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
+              aria-labelledby="inputEmail-label"
               placeholder="{{ i18n "newsletter_input_placeholder" }}"
             />
             <small id="emailHelp" class="form-text text-muted"
@@ -76,7 +78,7 @@
     <div class="row text-left">
       <div class="col-md-4">
         <a id="theme" href="https://github.com/hossainemruz/toha" target="#">
-          <img src="/assets/images/inverted-logo.png">
+          <img src="/assets/images/inverted-logo.png" alt="">
           Toha
         </a>
       </div>

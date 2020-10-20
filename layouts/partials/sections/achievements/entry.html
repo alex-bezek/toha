@@ -3,9 +3,9 @@
   style="background-image: url({{ .image | absURL }});"
 >
   <i class="fas fa-search-plus" id="enlarge-icon"></i>
-  <h4 class="title" id="achievement-title">{{ .title }}</h4>
+  <h2 class="h4 title" id="achievement-title">{{ .title }}</h2>
   <div class="caption hidden col-lg-6 text-left" id="caption">
-    <h4>{{ .title }}</h4>
+    <h3 class="h4">{{ .title }}</h3>
     <p>{{ .summary | markdownify }}</p>
   </div>
 </div>

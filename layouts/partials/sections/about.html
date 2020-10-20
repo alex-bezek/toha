@@ -7,14 +7,15 @@
   <div class="row pt-sm-2 pt-md-4 align-self-center">
     <!-- summary -->
     <div class="col-sm-6">
-    <h3 class="p-1">{{ site.Params.author.name }}</h3>
+      {{/*  TODO: This doesn't seem to work  */}}
+    <h1 class="h1 p-1">{{ site.Params.author.name }}</h1>
       {{ if .designation }}
-      <h5 class="p-1">
+      <h2 class="h5 p-1">
         {{ .designation }}
         {{ if .company }}
         {{ i18n "at"}} <a href="{{ .company.url }}">{{ .company.name }}</a>
         {{ end }}
-      </h5>
+      </h2>
       {{ end }}
       <p class="p-1 text-justify">
         {{ .summary | markdownify }}
@@ -24,9 +25,9 @@
           {{ range .socialLinks }}
           <li>
             {{ if eq .name "Email" }}
-              <a href="mailto:{{ .url }}" target="/"><i class="{{ .icon }}"></i></a>
+              <a href="mailto:{{ .url }}" aria-label="{{ .name }}" target="/"><i class="{{ .icon }}"></i></a>
             {{ else }}
-              <a href="{{ .url }}" target="/"><i class="{{ .icon }}"></i></a>
+              <a href="{{ .url }}" aria-label="{{ .name }}"  target="/"><i class="{{ .icon }}"></i></a>
             {{ end }}
           </li>
           {{ end }}
