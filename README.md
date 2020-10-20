@@ -8,6 +8,7 @@ Example Site: [Toha Example Site](https://toha.netlify.app)
 
 ## Features
 
+
 - Minimalist Design
 - Fully Responsive
 - Carefully designed cards
